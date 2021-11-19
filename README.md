@@ -15,3 +15,5 @@ echo "MESSAGE_STYLE=uppercase" > .env
 ```
 node index.js
 ```
+Access the application
+http://localhost:3000/
