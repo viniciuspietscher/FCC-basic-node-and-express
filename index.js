@@ -31,6 +31,10 @@ app.get("/now", (req, res, next) => {
 app.get("/:word/echo", (req, res) => {
   res.json({"echo": req.params.word})
 })
+// get query parameter input from the client
+app.get("/name", (req, res) => {
+  res.json({"name": `${req.query.first} ${req.query.last}`})
+})
 // serve static assets
 app.use("/public", express.static(__dirname + "/public"))
 
