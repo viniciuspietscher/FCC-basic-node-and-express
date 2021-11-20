@@ -27,6 +27,10 @@ app.get("/now", (req, res, next) => {
 }, (req, res) => {
   res.json({"time": req.time})
 })
+// get route parameter input from the client
+app.get("/:word/echo", (req, res) => {
+  res.json({"echo": req.params.word})
+})
 // serve static assets
 app.use("/public", express.static(__dirname + "/public"))
 
