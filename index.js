@@ -6,6 +6,10 @@ const port = 3000
 
 // Use body-parser to parse POST Requests
 app.use(bodyParser.urlencoded({extended: false}));
+// Get data from POST requests
+app.post("/name", (req, res) => {
+  res.json({"name": `${req.body.first} ${req.body.last}`});
+})
 
 // root level request logger middleware for all methods
 app.use((req, res, next) => {
