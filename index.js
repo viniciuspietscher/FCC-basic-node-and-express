@@ -1,7 +1,11 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const port = 3000
+
+// Use body-parser to parse POST Requests
+app.use(bodyParser.urlencoded({extended: false}));
 
 // root level request logger middleware for all methods
 app.use((req, res, next) => {
